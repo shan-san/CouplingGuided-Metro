@@ -1,0 +1,721 @@
+{
+  "description": "Seeded simulation inputs; event times are seconds after 06:00.",
+  "base_seed": 111,
+  "split": "test",
+  "repeat": 0,
+  "episode_seconds": 7200,
+  "decision_seconds": 30,
+  "physical_tick_seconds": 1,
+  "lines": {
+    "sz10": {
+      "topology_id": 103,
+      "line": "深圳地铁10号线",
+      "generator_recipe_sha256": "665d9bd7d757d88055e9849198d679686abf9ae327df81c712ae3e714a33e531"
+    },
+    "sz6b": {
+      "topology_id": 104,
+      "line": "深圳地铁6号线支线",
+      "generator_recipe_sha256": "c0416f39f2b92458d23de095d4cdd00bfd2dd25d240ed3e09c2bb9636fd84b8e"
+    },
+    "sz20": {
+      "topology_id": 101,
+      "line": "深圳地铁20号线",
+      "generator_recipe_sha256": "fcdad36ec879fd03c7a28639b9b04d4b9ac8c711beb89ecba09d0fcd91d61304"
+    },
+    "sh16": {
+      "topology_id": 105,
+      "line": "上海地铁16号线",
+      "generator_recipe_sha256": "040576e608ad287375420cf667c24e625c073ce9f30daede5f4b3593eaf6a795"
+    }
+  },
+  "cases": [
+    {
+      "case_id": "sz10_test_0_combination_B",
+      "topology": 103,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_B",
+      "line": "sz10",
+      "events": [
+        {
+          "event_id": "switch_failure",
+          "type": "switch_failure",
+          "target": {
+            "kind": "switch",
+            "id": "S1"
+          },
+          "parameters": {
+            "disabled_route_ids": [
+              3
+            ]
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 2700,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "speed_restriction",
+          "type": "speed_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "6-7"
+          },
+          "parameters": {
+            "travel_time_multiplier": 3.0
+          },
+          "start_seconds": 1440,
+          "actual_end_seconds": 4500,
+          "first_report_seconds": 1440,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "dwell_extension",
+          "type": "dwell_extension",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "additional_seconds": 90
+          },
+          "start_seconds": 1260,
+          "actual_end_seconds": 3600,
+          "first_report_seconds": 1260,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sz10_test_0_combination_D",
+      "topology": 103,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_D",
+      "line": "sz10",
+      "events": [
+        {
+          "event_id": "power_restriction",
+          "type": "power_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "6-7"
+          },
+          "parameters": {
+            "travel_time_multiplier": 2.0,
+            "entry_allowed": false
+          },
+          "start_seconds": 1560,
+          "actual_end_seconds": 3510,
+          "first_report_seconds": 1560,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "depot_access_restriction",
+          "type": "depot_access_restriction",
+          "target": {
+            "kind": "depot",
+            "id": "D0"
+          },
+          "parameters": {
+            "entry_allowed": true,
+            "exit_allowed": false
+          },
+          "start_seconds": 1320,
+          "actual_end_seconds": 2880,
+          "first_report_seconds": 1320,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "speed_restriction",
+          "type": "speed_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "7-8"
+          },
+          "parameters": {
+            "travel_time_multiplier": 3.0
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 4140,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sz10_test_0_combination_F",
+      "topology": 103,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_F",
+      "line": "sz10",
+      "events": [
+        {
+          "event_id": "vehicle_capacity_loss",
+          "type": "vehicle_capacity_loss",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "passenger_capacity": 200
+          },
+          "start_seconds": 1680,
+          "actual_end_seconds": 4140,
+          "first_report_seconds": 1680,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "demand_surge",
+          "type": "demand_surge",
+          "target": {
+            "kind": "passenger_origin",
+            "id": 6
+          },
+          "parameters": {
+            "arrival_intensity_multiplier": 2.0
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 3600,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "dwell_extension",
+          "type": "dwell_extension",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "additional_seconds": 90
+          },
+          "start_seconds": 1380,
+          "actual_end_seconds": 3060,
+          "first_report_seconds": 1380,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sz6b_test_0_combination_B",
+      "topology": 104,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_B",
+      "line": "sz6b",
+      "events": [
+        {
+          "event_id": "switch_failure",
+          "type": "switch_failure",
+          "target": {
+            "kind": "switch",
+            "id": "S1"
+          },
+          "parameters": {
+            "disabled_route_ids": [
+              3
+            ]
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 2700,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "speed_restriction",
+          "type": "speed_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "2-3"
+          },
+          "parameters": {
+            "travel_time_multiplier": 3.0
+          },
+          "start_seconds": 1440,
+          "actual_end_seconds": 4500,
+          "first_report_seconds": 1440,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "dwell_extension",
+          "type": "dwell_extension",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "additional_seconds": 90
+          },
+          "start_seconds": 1260,
+          "actual_end_seconds": 3600,
+          "first_report_seconds": 1260,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sz6b_test_0_combination_D",
+      "topology": 104,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_D",
+      "line": "sz6b",
+      "events": [
+        {
+          "event_id": "power_restriction",
+          "type": "power_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "2-3"
+          },
+          "parameters": {
+            "travel_time_multiplier": 2.0,
+            "entry_allowed": false
+          },
+          "start_seconds": 1560,
+          "actual_end_seconds": 3510,
+          "first_report_seconds": 1560,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "depot_access_restriction",
+          "type": "depot_access_restriction",
+          "target": {
+            "kind": "depot",
+            "id": "D0"
+          },
+          "parameters": {
+            "entry_allowed": true,
+            "exit_allowed": false
+          },
+          "start_seconds": 1320,
+          "actual_end_seconds": 2880,
+          "first_report_seconds": 1320,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "speed_restriction",
+          "type": "speed_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "3-4"
+          },
+          "parameters": {
+            "travel_time_multiplier": 3.0
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 4140,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sz6b_test_0_combination_F",
+      "topology": 104,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_F",
+      "line": "sz6b",
+      "events": [
+        {
+          "event_id": "vehicle_capacity_loss",
+          "type": "vehicle_capacity_loss",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "passenger_capacity": 200
+          },
+          "start_seconds": 1680,
+          "actual_end_seconds": 4140,
+          "first_report_seconds": 1680,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "demand_surge",
+          "type": "demand_surge",
+          "target": {
+            "kind": "passenger_origin",
+            "id": 2
+          },
+          "parameters": {
+            "arrival_intensity_multiplier": 2.0
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 3600,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "dwell_extension",
+          "type": "dwell_extension",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "additional_seconds": 90
+          },
+          "start_seconds": 1380,
+          "actual_end_seconds": 3060,
+          "first_report_seconds": 1380,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sz20_test_0_combination_B",
+      "topology": 101,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_B",
+      "line": "sz20",
+      "events": [
+        {
+          "event_id": "switch_failure",
+          "type": "switch_failure",
+          "target": {
+            "kind": "switch",
+            "id": "S1"
+          },
+          "parameters": {
+            "disabled_route_ids": [
+              3
+            ]
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 2700,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "speed_restriction",
+          "type": "speed_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "2-3"
+          },
+          "parameters": {
+            "travel_time_multiplier": 3.0
+          },
+          "start_seconds": 1440,
+          "actual_end_seconds": 4500,
+          "first_report_seconds": 1440,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "dwell_extension",
+          "type": "dwell_extension",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "additional_seconds": 90
+          },
+          "start_seconds": 1260,
+          "actual_end_seconds": 3600,
+          "first_report_seconds": 1260,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sz20_test_0_combination_D",
+      "topology": 101,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_D",
+      "line": "sz20",
+      "events": [
+        {
+          "event_id": "power_restriction",
+          "type": "power_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "2-3"
+          },
+          "parameters": {
+            "travel_time_multiplier": 2.0,
+            "entry_allowed": false
+          },
+          "start_seconds": 1560,
+          "actual_end_seconds": 3510,
+          "first_report_seconds": 1560,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "depot_access_restriction",
+          "type": "depot_access_restriction",
+          "target": {
+            "kind": "depot",
+            "id": "D0"
+          },
+          "parameters": {
+            "entry_allowed": true,
+            "exit_allowed": false
+          },
+          "start_seconds": 1320,
+          "actual_end_seconds": 2880,
+          "first_report_seconds": 1320,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "speed_restriction",
+          "type": "speed_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "3-4"
+          },
+          "parameters": {
+            "travel_time_multiplier": 3.0
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 4140,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sz20_test_0_combination_F",
+      "topology": 101,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_F",
+      "line": "sz20",
+      "events": [
+        {
+          "event_id": "vehicle_capacity_loss",
+          "type": "vehicle_capacity_loss",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "passenger_capacity": 200
+          },
+          "start_seconds": 1680,
+          "actual_end_seconds": 4140,
+          "first_report_seconds": 1680,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "demand_surge",
+          "type": "demand_surge",
+          "target": {
+            "kind": "passenger_origin",
+            "id": 2
+          },
+          "parameters": {
+            "arrival_intensity_multiplier": 2.0
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 3600,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "dwell_extension",
+          "type": "dwell_extension",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "additional_seconds": 90
+          },
+          "start_seconds": 1380,
+          "actual_end_seconds": 3060,
+          "first_report_seconds": 1380,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sh16_test_0_combination_B",
+      "topology": 105,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_B",
+      "line": "sh16",
+      "events": [
+        {
+          "event_id": "switch_failure",
+          "type": "switch_failure",
+          "target": {
+            "kind": "switch",
+            "id": "S1"
+          },
+          "parameters": {
+            "disabled_route_ids": [
+              3
+            ]
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 2700,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "speed_restriction",
+          "type": "speed_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "3-4"
+          },
+          "parameters": {
+            "travel_time_multiplier": 3.0
+          },
+          "start_seconds": 1440,
+          "actual_end_seconds": 4500,
+          "first_report_seconds": 1440,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "dwell_extension",
+          "type": "dwell_extension",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "additional_seconds": 90
+          },
+          "start_seconds": 1260,
+          "actual_end_seconds": 3600,
+          "first_report_seconds": 1260,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sh16_test_0_combination_D",
+      "topology": 105,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_D",
+      "line": "sh16",
+      "events": [
+        {
+          "event_id": "power_restriction",
+          "type": "power_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "3-4"
+          },
+          "parameters": {
+            "travel_time_multiplier": 2.0,
+            "entry_allowed": false
+          },
+          "start_seconds": 1560,
+          "actual_end_seconds": 3510,
+          "first_report_seconds": 1560,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "depot_access_restriction",
+          "type": "depot_access_restriction",
+          "target": {
+            "kind": "depot",
+            "id": "D0"
+          },
+          "parameters": {
+            "entry_allowed": true,
+            "exit_allowed": false
+          },
+          "start_seconds": 1320,
+          "actual_end_seconds": 2880,
+          "first_report_seconds": 1320,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "speed_restriction",
+          "type": "speed_restriction",
+          "target": {
+            "kind": "segment",
+            "id": "4-5"
+          },
+          "parameters": {
+            "travel_time_multiplier": 3.0
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 4140,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        }
+      ]
+    },
+    {
+      "case_id": "sh16_test_0_combination_F",
+      "topology": 105,
+      "split": "test",
+      "repeat": 0,
+      "seed": 200111,
+      "scenario": "combination_F",
+      "line": "sh16",
+      "events": [
+        {
+          "event_id": "vehicle_capacity_loss",
+          "type": "vehicle_capacity_loss",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "passenger_capacity": 200
+          },
+          "start_seconds": 1680,
+          "actual_end_seconds": 4140,
+          "first_report_seconds": 1680,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "demand_surge",
+          "type": "demand_surge",
+          "target": {
+            "kind": "passenger_origin",
+            "id": 3
+          },
+          "parameters": {
+            "arrival_intensity_multiplier": 2.0
+          },
+          "start_seconds": 1080,
+          "actual_end_seconds": 3600,
+          "first_report_seconds": 1080,
+          "recovery_reports": []
+        },
+        {
+          "event_id": "dwell_extension",
+          "type": "dwell_extension",
+          "target": {
+            "kind": "vehicle",
+            "id": "agent_0"
+          },
+          "parameters": {
+            "additional_seconds": 90
+          },
+          "start_seconds": 1380,
+          "actual_end_seconds": 3060,
+          "first_report_seconds": 1380,
+          "recovery_reports": []
+        }
+      ]
+    }
+  ]
+}

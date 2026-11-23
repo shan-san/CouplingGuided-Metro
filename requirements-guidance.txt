@@ -1,0 +1,6 @@
+-r requirements.txt
+langchain-core==1.8.4
+langchain-openai==1.8.5
+openai==3.57.0
+transformers==5.8.1
+sentence-transformers==5.5.0
